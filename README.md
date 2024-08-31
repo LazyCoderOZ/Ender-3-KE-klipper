@@ -1,3 +1,8 @@
+This Klipper is modified to run on the Ender 3 KE by LazyCoderOZ.
+It is not vanilla.
+There are a few changes to make things run. My testing branch is ender-3-ke.
+Otherwise, all code is directly from Klipper3d
+
 Welcome to the Klipper project!
 
 [![Klipper](docs/img/klipper-logo-small.png)](https://www.klipper3d.org/)
