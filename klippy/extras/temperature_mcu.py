@@ -77,7 +77,9 @@ class PrinterTemperatureMCU:
             ('stm32f072', self.config_stm32f0x2),
             ('stm32g0', self.config_stm32g0),
             ('stm32g4', self.config_stm32g0),
+            #### Added from Creality Ender 3 KE Klipper ####
             ('gd32f303xe', self.config_gd32f303xe),
+            #### End of Addition ####
             ('stm32l4', self.config_stm32g0),
             ('stm32h723', self.config_stm32h723),
             ('stm32h7', self.config_stm32h7),
@@ -165,9 +167,11 @@ class PrinterTemperatureMCU:
         cal_adc_110 = self.read16(0x1FF1E840) / 65535.
         self.slope = (110. - 30.) / (cal_adc_110 - cal_adc_30)
         self.base_temperature = self.calc_base(30., cal_adc_30)
+    #### Added from Creality Ender 3 KE Klipper ####
     def config_gd32f303xe(self):
         self.slope = 3.3 / -.004100
         self.base_temperature = self.calc_base(25., 1.45 / 3.3)
+    #### End of Addition ####
     def read16(self, addr):
         params = self.debug_read_cmd.send([1, addr])
         return params['val']
